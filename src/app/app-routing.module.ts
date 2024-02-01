@@ -3,25 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'cart',
-    loadChildren: ()=> import('./pages/cart/cart.module').then(m=>m.CartModule)
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path:'customer',
-    loadChildren: () => import('./pages/customer/customer.module').then(m=>m.CustomerModule)
+    path: 'account',
+    loadChildren: () => import('./modules/account/account.module').then(m => m.AccountModule)
   },
   {
-    path:'order',
-    loadChildren: () => import('./pages/order/order.module').then(m=>m.OrderModule)
+    path: 'teacher',
+    loadChildren: () => import('./modules/teacher/teacher.module').then(m => m.TeacherModule)
   },
   {
-    path:'products',
-    loadChildren: () => import('./pages/products/products.module').then(m=>m.ProductsModule)
-  },
-  {
-    path:'',
-    redirectTo:'customer',
-    pathMatch:'full'
+    path: 'student',
+    loadChildren: () => import('./modules/student/student.module').then(m => m.StudentModule)
   }
 ];
 
